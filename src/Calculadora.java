@@ -12,27 +12,27 @@ public class Calculadora extends JFrame implements ActionListener {
 
     public Calculadora() {
         setTitle("Calculadora");
-        setSize(500, 420);
+        setSize(300, 420);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        
+
         display = new JTextField("0");
         display.setFont(new Font("Arial", Font.BOLD, 28));
         display.setHorizontalAlignment(JTextField.RIGHT);
         display.setEditable(false);
         add(display, BorderLayout.NORTH);
 
-        
+
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 4, 5, 5));
 
         String[] buttons = {
-            "7", "8", "9", "/",
-            "4", "5", "6", "*",
-            "1", "2", "3", "-",
-            "0", "C", "=", "+"
+                "7", "8", "9", "/",
+                "4", "5", "6", "*",
+                "1", "2", "3", "-",
+                "0", "C", "=", "+"
         };
 
         for (String text : buttons) {
@@ -49,22 +49,22 @@ public class Calculadora extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
 
-        
+
         if (cmd.charAt(0) >= '0' && cmd.charAt(0) <= '9') {
             if (isNewOp) {
                 display.setText("");
                 isNewOp = false;
             }
             display.setText(display.getText() + cmd);
-        } 
-        
+        }
+
         else if (cmd.equals("C")) {
             display.setText("0");
             firstOperand = 0;
             operator = "";
             isNewOp = true;
-        } 
-       
+        }
+
         else if (cmd.equals("=")) {
             if (!operator.isEmpty()) {
                 try {
@@ -93,8 +93,8 @@ public class Calculadora extends JFrame implements ActionListener {
                     display.setText("Erro");
                 }
             }
-        } 
-        
+        }
+
         else {
             try {
                 firstOperand = Double.parseDouble(display.getText());
