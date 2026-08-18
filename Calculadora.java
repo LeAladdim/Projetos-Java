@@ -12,7 +12,7 @@ public class Calculadora extends JFrame implements ActionListener {
 
     public Calculadora() {
         setTitle("Calculadora");
-        setSize(320, 420);
+        setSize(500, 420);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); 
         setLayout(new BorderLayout(10, 10));
@@ -107,7 +107,6 @@ public class Calculadora extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        // Garante que a interface seja criada na Thread correta do Swing
         SwingUtilities.invokeLater(() -> {
             new Calculadora().setVisible(true);
         });
