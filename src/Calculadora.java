@@ -6,12 +6,12 @@ import java.awt.event.ActionListener;
 public class Calculadora extends JFrame implements ActionListener {
 
     private final JTextField display;
-    private double firstOperand = 0;D:\salvar.bat
+    private double firstOperand = 0;
     private String operator = "";
     private boolean isNewOp = true;
 
     public Calculadora() {
-        setTitle("Calculadora");
+        setTitle("Calculadora Basics");
         setSize(330, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
