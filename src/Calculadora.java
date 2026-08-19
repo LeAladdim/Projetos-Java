@@ -11,17 +11,16 @@ public class Calculadora extends JFrame implements ActionListener {
     private boolean isNewOp = true;
 
     public Calculadora() {
-        // Configurações da Janela
-        setTitle("Calculadora Dark");
+        setTitle("Calculadora");
         setSize(330, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Fundo escuro geral
+       
         getContentPane().setBackground(new Color(28, 28, 30));
 
-        // Visor Estilizado
+     
         display = new JTextField("0");
         display.setFont(new Font("SansSerif", Font.BOLD, 38));
         display.setHorizontalAlignment(JTextField.RIGHT);
@@ -31,7 +30,7 @@ public class Calculadora extends JFrame implements ActionListener {
         display.setBorder(BorderFactory.createEmptyBorder(25, 20, 15, 20)); // Espaçamento interno
         add(display, BorderLayout.NORTH);
 
-        // Painel de Botões com espaçamento (gaps)
+        
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 4, 10, 10));
         panel.setBackground(new Color(28, 28, 30));
@@ -51,15 +50,15 @@ public class Calculadora extends JFrame implements ActionListener {
             button.setBorderPainted(false);  // Linha de borda limpa
             button.setOpaque(true);
 
-            // Cores categorizadas (Estilo Dark / iOS)
+            
             if ("/*-+=".contains(text)) {
-                button.setBackground(new Color(255, 149, 0)); // Laranja para operações
+                button.setBackground(new Color(255, 149, 0)); 
                 button.setForeground(Color.WHITE);
             } else if (text.equals("C")) {
-                button.setBackground(new Color(165, 165, 165)); // Cinza claro para 'C'
+                button.setBackground(new Color(165, 165, 165)); 
                 button.setForeground(Color.BLACK);
             } else {
-                button.setBackground(new Color(50, 50, 54));    // Cinza escuro para números
+                button.setBackground(new Color(50, 50, 54));    
                 button.setForeground(Color.WHITE);
             }
 
@@ -106,7 +105,7 @@ public class Calculadora extends JFrame implements ActionListener {
                             break;
                     }
 
-                    // Remove o ponto decimal se o resultado for um número inteiro (ex: 5.0 vira 5)
+                    
                     if (result % 1 == 0) {
                         display.setText(String.valueOf((long) result));
                     } else {
