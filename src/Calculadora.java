@@ -11,7 +11,7 @@ public class Calculadora extends JFrame implements ActionListener {
     private boolean isNewOp = true;
 
     public Calculadora() {
-        setTitle("Calculadora Basics");
+        setTitle("Calculadora Java");
         setSize(330, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
